@@ -1,3 +1,4 @@
+import 'package:final_project/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,5 +15,15 @@ class ProfileController extends GetxController {
     toggleEditing();
     Get.snackbar("Success", "Profile updated successfully!",
         snackPosition: SnackPosition.BOTTOM);
+  }
+
+  void logout() {
+    // Optionally clear user data
+    nameController.clear();
+    emailController.clear();
+    phoneController.clear();
+
+    // Navigate to Login screen
+   Get.offAll(() => LoginScreen()); // Make sure '/login' route exists
   }
 }
