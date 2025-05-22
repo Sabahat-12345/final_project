@@ -5,7 +5,8 @@ class CustomInputField extends StatelessWidget {
   final TextEditingController controller;
   final bool obscureText;
   final TextInputType keyboardType;
-  final Widget? suffixIcon; // <-- NEW
+  final Widget? suffixIcon;
+  final bool readOnly; // <-- Added here
 
   const CustomInputField({
     super.key,
@@ -13,7 +14,8 @@ class CustomInputField extends StatelessWidget {
     required this.controller,
     this.obscureText = false,
     this.keyboardType = TextInputType.text,
-    this.suffixIcon, // <-- NEW
+    this.suffixIcon,
+    this.readOnly = false, // <-- Added here
   });
 
   @override
@@ -22,11 +24,13 @@ class CustomInputField extends StatelessWidget {
       controller: controller,
       obscureText: obscureText,
       keyboardType: keyboardType,
+      readOnly: readOnly, // <-- Used here
       decoration: InputDecoration(
         hintText: hintText,
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-        suffixIcon: suffixIcon, // <-- NEW
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+        suffixIcon: suffixIcon,
       ),
     );
   }

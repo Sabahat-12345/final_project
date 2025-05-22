@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:final_project/screens/login_screen.dart';
+import 'package:final_project/screens/profile_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 
@@ -20,7 +21,7 @@ class SplashController extends GetxController {
 
   void checkAuthStatus() {
     if (auth.currentUser != null) {
-      Get.offAllNamed('/home'); // navigate to home if user is logged in
+     Get.offAll(() => ProfileScreen());  // navigate to home if user is logged in
     } else {
       Get.offAll(() => LoginScreen()); // navigate to login if not
     }
