@@ -3,7 +3,6 @@ import 'package:final_project/models/news_model.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
-import 'package:flutter/material.dart';
 
 class NewsController extends GetxController {
   var isLoading = true.obs;

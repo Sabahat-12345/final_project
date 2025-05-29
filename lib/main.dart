@@ -1,7 +1,9 @@
+import 'package:final_project/screens/news_screen.dadrt';
+
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
-import 'screens/splash_screen.dart';
+// import 'screens/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Final Project',
-      home: SplashScreen(),
+      home: NewsScreen(),
     );
   }
 }
