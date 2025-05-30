@@ -1,4 +1,5 @@
-import 'package:final_project/screens/news_screen.dadrt';
+
+import 'package:final_project/screens/news_screen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
