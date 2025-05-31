@@ -1,3 +1,4 @@
+import 'package:final_project/screens/tags_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:final_project/controllers/news_controller.dart';
@@ -12,6 +13,12 @@ class NewsScreen extends StatelessWidget {
         title: Text('Top Headlines'),
         centerTitle: true,
         actions: [
+          IconButton(
+            icon: const Icon(Icons.tag),
+            onPressed: () {
+              Get.to(() => TagsScreen());
+            },
+          ),
           IconButton(
             icon: Icon(Icons.refresh),
             onPressed: () {
@@ -42,7 +49,8 @@ class NewsScreen extends StatelessWidget {
                     // News Image
                     if (article.urlToImage != null)
                       ClipRRect(
-                        borderRadius: BorderRadius.vertical(top: Radius.circular(10)),
+                        borderRadius:
+                            BorderRadius.vertical(top: Radius.circular(10)),
                         child: Image.network(
                           article.urlToImage!,
                           width: double.infinity,
@@ -66,7 +74,8 @@ class NewsScreen extends StatelessWidget {
                           // News Title
                           Text(
                             article.title,
-                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold),
                           ),
                           SizedBox(height: 8),
 
@@ -82,7 +91,8 @@ class NewsScreen extends StatelessWidget {
                           // Published At
                           Text(
                             'Published on: ${article.publishedAt.split("T").first}',
-                            style: TextStyle(color: Colors.grey[600], fontSize: 12),
+                            style: TextStyle(
+                                color: Colors.grey[600], fontSize: 12),
                           ),
 
                           // Source
@@ -90,7 +100,8 @@ class NewsScreen extends StatelessWidget {
                             alignment: Alignment.bottomRight,
                             child: Text(
                               'Source: ${article.source.name}',
-                              style: TextStyle(fontStyle: FontStyle.italic, fontSize: 12),
+                              style: TextStyle(
+                                  fontStyle: FontStyle.italic, fontSize: 12),
                             ),
                           ),
                         ],
